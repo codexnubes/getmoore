@@ -1,2 +1,3 @@
-# Giant JSON Files #
-us-west-1-spot.json
+# Giant CSV and JSON Files #
+*.csv
+*.json
