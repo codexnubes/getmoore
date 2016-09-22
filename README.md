@@ -25,4 +25,17 @@ You can also do more complex queries, such as searching for a specific instance 
 aws ec2 describe-spot-price-history --instance-types m1.xlarge --start-time 2014-01-06T07:08:09 --end-time 2014-01-06T08:09:10
 ```
 
-TODO: write a bash script (pref multi-threaded) to make it easier on people
+Here's a bash script that gets everything and runs each pull in a separate process  
+```shell
+aws ec2 describe-spot-price-history --region us-east-1 > us-east-1.txt &  
+aws ec2 describe-spot-price-history --region us-west-1 > us-west-1.txt &  
+aws ec2 describe-spot-price-history --region us-west-2 > us-west-2.txt &  
+aws ec2 describe-spot-price-history --region eu-west-1 > eu-west-1.txt &  
+aws ec2 describe-spot-price-history --region eu-central-1 > eu-central-1.txt &  
+aws ec2 describe-spot-price-history --region ap-northeast-1 > ap-northeast-1.txt &  
+aws ec2 describe-spot-price-history --region ap-northeast-2 > ap-northeast-2.txt &  
+aws ec2 describe-spot-price-history --region ap-southeast-1 > ap-southeast-1.txt &  
+aws ec2 describe-spot-price-history --region ap-southeast-2 > ap-southeast-2.txt &  
+aws ec2 describe-spot-price-history --region sa-east-1 > sa-east-1.txt &  
+wait
+```
