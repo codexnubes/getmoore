@@ -24,3 +24,5 @@ You can also do more complex queries, such as searching for a specific instance 
 ```shell
 aws ec2 describe-spot-price-history --instance-types m1.xlarge --start-time 2014-01-06T07:08:09 --end-time 2014-01-06T08:09:10
 ```
+
+TODO: write a bash script (pref multi-threaded) to make it easier on people
